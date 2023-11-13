@@ -11,5 +11,8 @@ public class GasBill extends Bill{
     public String getBillDetails(){
         return "Gas Bill: "+getBillId() +", Company: "+ gasCompany+", Amount: $"+ getAmount();
     }
-
+    @Override 
+    protected void setState(){
+        this.State = "Gas Bill is released";
+    }
 }

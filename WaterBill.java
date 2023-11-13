@@ -11,4 +11,8 @@ public class WaterBill extends Bill{
     public String getBillDetails(){
         return "Water Bill: "+getBillId() + ", Supplier: "+waterSupplier + ", Amount: $"+getAmount();
     }
+    @Override
+    protected void setState(){
+        this.State = "Water Bill is released";
+    }
 }

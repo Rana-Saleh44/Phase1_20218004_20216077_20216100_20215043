@@ -11,4 +11,9 @@ public class ElectricityBill extends Bill{
     public String getBillDetails(){
         return "Electricity Bill: "+getBillId()+", Provider: "+electricityProvider+ ", Amount: $"+ getAmount();
     }
+    @Override 
+    protected void setState(){
+        this.State = "Electricity Bill is released";
+    }
+
 }

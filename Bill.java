@@ -1,11 +1,15 @@
 import java.util.UUID;
 import java.util.Date;
+import java.util.List;
+
 abstract public class Bill {
-    private UUID billId;
-    private double amount;
-    private Date dueDate;
-    private boolean isPaid;
-    private String billType;
+    protected UUID billId;
+    protected double amount;
+    protected Date dueDate;
+    protected boolean isPaid;
+    protected String billType;
+    protected String State;
+    protected List <Observer> Subcribers;
 
     public Bill(String billType,double amount){
         this.billId = UUID.randomUUID();
@@ -19,7 +23,6 @@ abstract public class Bill {
     public String getBillType(){
         return billType;
     }
-
     public double getAmount() {
         return amount;
     }
@@ -30,4 +33,10 @@ abstract public class Bill {
         this.isPaid =true;
     }
     public abstract String getBillDetails();
+    protected abstract void setState();
+    protected void Notify(){
+        for(Observer observer : Subcribers){
+            observer.update(State);
+        }
+    }
 }
