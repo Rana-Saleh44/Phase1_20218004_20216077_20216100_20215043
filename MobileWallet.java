@@ -61,7 +61,7 @@ public class MobileWallet extends Account
     }
     public boolean isUniqueUsername(String uUsername)
     {
-        return !usernames.contains(username);
+        return !usernames.contains(getUsername());
     }
     public void addUser(String username)
     {
