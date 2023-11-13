@@ -1,3 +1,3 @@
-public class BankAlahly extends Banks{
+public class BankAlahly extends Bank{
 
 }

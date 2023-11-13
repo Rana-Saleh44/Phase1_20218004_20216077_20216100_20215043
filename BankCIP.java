@@ -1,3 +1,3 @@
-public class BankCIP extends Banks{
+public class BankCIP extends Bank{
 
 }
