@@ -1,9 +1,9 @@
 import java.util.Vector;
 
-public class Banks {
+public class Bank {
     private Vector<String> AccountNumbers;
     private Vector<String> MobileNumbers;
-    public Banks() {
+    public Bank() {
         AccountNumbers = new Vector<>();
     }
     protected boolean CheckAccountNumber(String accountNumber){
