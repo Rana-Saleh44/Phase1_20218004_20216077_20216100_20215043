@@ -17,6 +17,9 @@ public class Account {
     public double getBalance() {
         return balance;
     }
+    public String getAccountNumber(){
+        return accountNumber;
+    }
 
     public void setBalance(double balance) {
         this.balance = balance;
@@ -36,6 +39,12 @@ public class Account {
 
     public void payBill(String billType) {
 
+    }
+    public void deductAmount(double amount){
+        if(balance >= amount)
+            balance -=amount;
+        else
+            System.out.println("Insufficient funds in the account. ");
     }
 
     public String getUsername() {
