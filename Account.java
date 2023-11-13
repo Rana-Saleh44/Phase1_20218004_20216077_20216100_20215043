@@ -6,6 +6,7 @@ public class Account
     private String accountNumber;
     private double balance;
 
+
     public Account(String username, String password, String mobileNumber, String accountNumber)
     {
         this.username = username;
@@ -14,7 +15,12 @@ public class Account
         this.accountNumber = accountNumber;
         this.balance = 0.0;
     }
-
+    double getBalance(){
+        return balance;
+    }
+    void setBalance(double balance){
+        this.balance = balance;
+    }
     public void transferToWallet(String walletMobileNumber, double amount)
     {
 
