@@ -47,6 +47,10 @@ public class Account {
             System.out.println("Insufficient funds in the account. ");
     }
 
+    public void addAmount(double amount){
+        balance += amount;
+    }
+
     public String getUsername() {
         return username;
     }
