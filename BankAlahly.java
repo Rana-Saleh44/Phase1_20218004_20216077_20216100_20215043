@@ -1,15 +1,3 @@
-import java.util.Vector;
+public class BankAlahly extends Banks{
 
-public class BankAlahly {
-    private Vector<String> AccountNumbers;
-    private Vector<String> MobileNumbers;
-    public BankAlahly() {
-        AccountNumbers = new Vector<>();
-    }
-    protected boolean CheckAccountNumber(String accountNumber){
-        return AccountNumbers.contains(accountNumber);
-    }
-    protected boolean CheckMobileNumber(String mobileNumber){
-        return MobileNumbers.contains(mobileNumber);
-    }
 }
