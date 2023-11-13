@@ -5,6 +5,6 @@ public class GasBillPayment implements BillPaymentStrategy{
         account.deductAmount(bill.getAmount());
         bill.markAsPaid();
     }
-    
+
 
 }
