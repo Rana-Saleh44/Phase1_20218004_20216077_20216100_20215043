@@ -1,5 +1,4 @@
-public class Account
-{
+public class Account {
     private String username;
     private String password;
     private String mobileNumber;
@@ -7,38 +6,40 @@ public class Account
     private double balance;
 
 
-    public Account(String username, String password, String mobileNumber, String accountNumber)
-    {
+    public Account(String username, String password, String mobileNumber, String accountNumber) {
         this.username = username;
         this.password = password;
         this.mobileNumber = mobileNumber;
         this.accountNumber = accountNumber;
         this.balance = 0.0;
     }
-    double getBalance(){
+
+    public double getBalance() {
         return balance;
     }
-    void setBalance(double balance){
+
+    public void setBalance(double balance) {
         this.balance = balance;
     }
-    public void transferToWallet(String walletMobileNumber, double amount)
-    {
+
+    public void transferToWallet(String walletMobileNumber, double amount) {
 
     }
 
-    public void transferToInstapayAccount(String accountUsername, double amount)
-    {
+    public void transferToInstapayAccount(String accountUsername, double amount) {
 
     }
 
-    public double inquireBalance()
-    {
+    public double inquireBalance() {
         return balance;
     }
 
-    public void payBill(String billType)
-    {
+    public void payBill(String billType) {
 
+    }
+
+    public String getUsername() {
+        return username;
     }
 }
 
