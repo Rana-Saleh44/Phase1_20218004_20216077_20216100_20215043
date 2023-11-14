@@ -1,4 +1,4 @@
 public interface BillPaymentStrategy {
 
-    void payBill(Bill bill, Account account);
+    void payBill(Bill bill, AccountType account);
 }

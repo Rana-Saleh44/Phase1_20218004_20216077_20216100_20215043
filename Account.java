@@ -1,62 +1,62 @@
-public class Account {
+import java.sql.PreparedStatement;
+
+public class Account implements Observer {
+    private String mobileNumber;
+    private String name;
     private String username;
     private String email;
     private String password;
-    private String mobileNumber;
+
+    private int age;
+    public Account(){}
+    public Account(String email,String password){
+        this.email = email;
+        this.password = password;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     public String getMobileNumber() {
         return mobileNumber;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
 
-    protected String accountNumber;
-    protected double balance;
-
-
-    public Account() {
-    }
-
-    public Account(String email, String password) {
-        this.email = email;
-        this.password = password;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public String getAccountNumber() {
-        return accountNumber;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
-    public double inquireBalance() {
-        return balance;
-    }
-
-    public void deductAmount(double amount) {
-        if (balance >= amount)
-            balance -= amount;
-        else
-            System.out.println("Insufficient funds in the account. ");
-    }
-
-    public void addAmount(double amount) {
-        balance += amount;
-    }
-
     public String getUsername() {
         return username;
     }
-}
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public void update(String even) {
+        System.out.println(even);
+    }
+
+}
