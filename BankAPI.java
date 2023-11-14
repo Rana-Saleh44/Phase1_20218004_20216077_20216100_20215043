@@ -5,7 +5,7 @@ public class BankAPI{
     private BankFactory bankFactory = new ConcreteBankFactory();
     private Bank bank;
     private int otpCounter = 0;
-    private int option = 1;
+    private int option;
     private String GenerateOTP(){
         otpCounter++;
         return String.format("%06d", otpCounter);
@@ -34,6 +34,7 @@ public class BankAPI{
         }
     }
     public void TransitionToBank(String accountNumber, String mobileNumber){
+        option = 1;
         while (option != 0) {
             bank = bankFactory.CreateBank(accountNumber);
             if(bank != null){

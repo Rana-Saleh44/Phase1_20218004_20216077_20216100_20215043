@@ -1,11 +1,13 @@
-public class Account {
-    private String username;
-    private String email;
-    private String password;
-    private String mobileNumber;
+public abstract class Account {
+    protected String UserName;
+    protected String Email;
+    protected String Password;
+    protected String MobileNumber;
+    protected String AccountNumber;
+    protected double Balance;
 
     public String getMobileNumber() {
-        return mobileNumber;
+        return MobileNumber;
     }
 
     public String getEmail() {
@@ -15,10 +17,6 @@ public class Account {
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
-
-    protected String accountNumber;
-    protected double balance;
-
 
     public Account() {
     }
