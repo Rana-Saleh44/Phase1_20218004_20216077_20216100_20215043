@@ -9,7 +9,7 @@ abstract public class Bill {
     protected boolean isPaid;
     protected String billType;
     protected String State;
-    protected List <Observer> Subcribers;
+    protected List <Observer> Subscribers;
 
     public Bill(String billType,double amount){
         this.billId = UUID.randomUUID();
@@ -35,7 +35,7 @@ abstract public class Bill {
     public abstract String getBillDetails();
     protected abstract void setState();
     protected void Notify(){
-        for(Observer observer : Subcribers){
+        for(Observer observer : Subscribers){
             observer.update(State);
         }
     }
