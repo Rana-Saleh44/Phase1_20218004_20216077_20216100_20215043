@@ -1,37 +1,28 @@
 import java.util.Random;
 import java.util.Scanner;
 import java.util.*;
-public class MobileWallet extends Account
+public class MobileWallet extends AccountType
 {
-    List<String> usernames=new ArrayList<String>();
     private String mobileNumber;
     private boolean numberVerification;
     protected int OTPn;
-
-  /*  public MobileWallet(String mobileNumber,boolean numberVerification)
+    public MobileWallet(String accountNumber)
     {
-        this.mobileNumber = mobileNumber;
-        this.numberVerification = false;
-    }*/
-
-    public MobileWallet(String username, String password, String mobileNumber, String accountNumber)
-    {
-        super(username, password, mobileNumber, accountNumber);
+        this.accountNumber=accountNumber;
     }
 
     public boolean verifyMobileNumber()
     {
-         if(mobileNumber.startsWith("010") || mobileNumber.startsWith("011") || mobileNumber.startsWith("012") || mobileNumber.startsWith("015"))
+         if(mobileNumber.startsWith("+20") && numberOfDigits(mobileNumber) == true)
          {
              return true;
          }
          else
              return false;
     }
-    public boolean sendVerificationCode()
+    public void sendVerificationCode(String mobileNumber)
     {
         System.out.println("Sending verification code to " + mobileNumber);
-        return true;
     }
 
     public String receiveVerificationCode()
@@ -59,28 +50,12 @@ public class MobileWallet extends Account
             System.out.println("OTP is not verified");
             return false;
     }
-    public boolean isUniqueUsername(String uUsername)
-    {
-        return !usernames.contains(getUsername());
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
     }
-    public void addUser(String username)
+    public static boolean numberOfDigits(String number)
     {
-        usernames.add(username);
-    }
-    public void checkingUsername()
-    {
-        Scanner u = new Scanner(System.in);
-        String username;
-        System.out.print("Enter username: ");
-        username = u.next();
-
-        if (!isUniqueUsername(username))
-        {
-            System.out.println("Username is not unique. Please choose a different one.");
-        }
-        addUser(username);
-
-        System.out.println("Username successfully registered!");
+        return String.valueOf(number).length() == 11;
     }
 }
 
