@@ -1,40 +1,35 @@
 public class AccountType {
 
     private TransferStrategy transferStrategy;
-    protected String accountNumber;
-    protected double balance;
+    protected Account UserAccount;
+    protected double Balance;
 
 
     public AccountType() {
     }
 
     public double getBalance() {
-        return balance;
-    }
-
-    public String getAccountNumber() {
-        return accountNumber;
+        return Balance;
     }
 
     public void setBalance(double balance) {
-        this.balance = balance;
+        this.Balance = balance;
     }
 
     public double inquireBalance() {
-        return balance;
+        return Balance;
     }
 
     public void deductAmount(double amount) {
-        if (balance >= amount)
-            balance -= amount;
+        if (Balance >= amount)
+            Balance -= amount;
         else
             System.out.println("Insufficient funds in the account. ");
     }
 
     public void addAmount(double amount) {
-        balance += amount;
+        Balance += amount;
     }
-
 
     public void TransferMoney(TransferStrategy transferStrategy){
         this.transferStrategy = transferStrategy;

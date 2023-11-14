@@ -1,25 +1,23 @@
-import java.sql.PreparedStatement;
-
 public class Account implements Observer {
-    private String mobileNumber;
-    private String name;
-    private String username;
-    private String email;
-    private String password;
-
+    private String MobileNumber;
+    private String Name;
+    private String UserName;
+    private String Email;
+    private String Password;
     private int age;
+
     public Account(){}
     public Account(String email,String password){
-        this.email = email;
-        this.password = password;
+        this.Email = email;
+        this.Password = password;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.Name = name;
     }
 
     public int getAge() {
@@ -30,33 +28,25 @@ public class Account implements Observer {
         this.age = age;
     }
 
-    public String getMobileNumber() {
-        return mobileNumber;
-    }
-
-    public void setMobileNumber(String mobileNumber) {
-        this.mobileNumber = mobileNumber;
-    }
-
     public String getUsername() {
-        return username;
+        return UserName;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.UserName = username;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.Email = email;
     }
 
     @Override
-    public void update(String even) {
-        System.out.println(even);
+    public void update(String event) {
+        System.out.println(event);
     }
 
 }
