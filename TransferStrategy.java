@@ -1,3 +1,3 @@
 public interface TransferStrategy {
-    void transfer(double amount, Account SourceAccount, Account TargetAccount);
+    void transfer(double amount, AccountType SourceAccount, AccountType TargetAccount);
 }

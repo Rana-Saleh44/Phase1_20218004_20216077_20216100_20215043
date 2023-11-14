@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 import java.util.*;
-public class MobileWallet extends Account
+public class MobileWallet extends AccountType
 {
     List<String> usernames=new ArrayList<String>();
     private String mobileNumber;

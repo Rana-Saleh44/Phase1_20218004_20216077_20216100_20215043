@@ -1,60 +1,52 @@
-public abstract class Account {
-    protected String UserName;
-    protected String Email;
-    protected String Password;
-    protected String MobileNumber;
-    protected String AccountNumber;
-    protected double Balance;
+public class Account implements Observer {
+    private String MobileNumber;
+    private String Name;
+    private String UserName;
+    private String Email;
+    private String Password;
+    private int age;
 
-    public String getMobileNumber() {
-        return MobileNumber;
+    public Account(){}
+    public Account(String email,String password){
+        this.Email = email;
+        this.Password = password;
     }
 
-    public String getEmail() {
-        return email;
+    public String getName() {
+        return Name;
     }
 
-    public void setMobileNumber(String mobileNumber) {
-        this.mobileNumber = mobileNumber;
+    public void setName(String name) {
+        this.Name = name;
     }
 
-    public Account() {
+    public int getAge() {
+        return age;
     }
 
-    public Account(String email, String password) {
-        this.email = email;
-        this.password = password;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public String getAccountNumber() {
-        return accountNumber;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
-    public double inquireBalance() {
-        return balance;
-    }
-
-    public void deductAmount(double amount) {
-        if (balance >= amount)
-            balance -= amount;
-        else
-            System.out.println("Insufficient funds in the account. ");
-    }
-
-    public void addAmount(double amount) {
-        balance += amount;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getUsername() {
-        return username;
+        return UserName;
     }
-}
 
+    public void setUsername(String username) {
+        this.UserName = username;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        this.Email = email;
+    }
+
+    @Override
+    public void update(String event) {
+        System.out.println(event);
+    }
+
+}
