@@ -6,6 +6,7 @@ public class BankAPI{
     private Bank bank;
     private int otpCounter = 0;
     private int option;
+    private double balance;
     private String GenerateOTP(){
         otpCounter++;
         return String.format("%06d", otpCounter);
@@ -26,12 +27,16 @@ public class BankAPI{
     }
     public<T extends Bank> void Checking(T bank, String accountNumber, String mobileNumber)
     {
-        if(bank.CheckAccountNumber(accountNumber) && bank.CheckMobileNumber(mobileNumber)){
+        if (bank.verification(accountNumber, mobileNumber) != -1) {
+            balance = bank.verification(accountNumber,mobileNumber);
             SendOTP();
-        }
-        else{
+        } else {
             System.out.println("Account Not Found");
         }
+    }
+
+    public double getBalance(){
+        return balance;
     }
     public void TransitionToBank(String accountNumber, String mobileNumber){
         option = 1;
@@ -39,6 +44,7 @@ public class BankAPI{
             bank = bankFactory.CreateBank(accountNumber);
             if(bank != null){
                 Checking(bank, accountNumber, mobileNumber);
+
                 option = 0;
             }
             else{

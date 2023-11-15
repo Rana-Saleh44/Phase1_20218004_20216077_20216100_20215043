@@ -1,15 +1,29 @@
 import java.util.Vector;
 
-public class Bank {
-    private Vector<String> AccountNumbers;
-    private Vector<String> MobileNumbers;
-    public Bank() {
-        AccountNumbers = new Vector<>();
+abstract public class Bank {
+    protected Vector<String> AccountNumbers;
+    protected Vector<String> MobileNumbers;
+    protected Vector<Double> Balance;
+
+    public int verification(String accountNumber, String mobileNumber) {
+        for (int i = 0; i < AccountNumbers.size(); i++) {
+            if (AccountNumbers.get(i).equals(accountNumber) && MobileNumbers.get(i).equals(mobileNumber)) {
+                return i;
+            }
+        }
+        return -1;
     }
-    protected boolean CheckAccountNumber(String accountNumber){
-        return AccountNumbers.contains(accountNumber);
+
+    public void setAccountNumbers(Vector<String> accountNumbers) {
+        AccountNumbers = accountNumbers;
     }
-    protected boolean CheckMobileNumber(String mobileNumber){
-        return MobileNumbers.contains(mobileNumber);
+
+    public void setMobileNumbers(Vector<String> mobileNumbers) {
+        MobileNumbers = mobileNumbers;
     }
+
+    public Double getBalance(int index) {
+        return Balance.get(index);
+    }
+
 }

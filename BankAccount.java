@@ -10,5 +10,12 @@ public class BankAccount extends AccountType{
             System.out.println("Login Failed!");
         }
     }
-    
+    public double getBalance(){
+        this.Balance = this.bankAPI.getBalance();
+        return Balance;
+    }
+    public BankAPI getBankAPI(){
+        return bankAPI;
+    }
+
 }
