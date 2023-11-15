@@ -3,17 +3,16 @@ public class AccountType {
     private TransferStrategy transferStrategy;
     protected Account UserAccount;
     protected double Balance;
+    private String AccountNumber;
 
 
-    public AccountType() {
+
+    public String getAccountNumber() {
+        return AccountNumber;
     }
 
-    public double getBalance() {
-        return Balance;
-    }
-
-    public void setBalance(double balance) {
-        this.Balance = balance;
+    public void setAccountNumber(String accountNumber) {
+        AccountNumber = accountNumber;
     }
 
     public double inquireBalance() {
@@ -30,6 +29,8 @@ public class AccountType {
     public void addAmount(double amount) {
         Balance += amount;
     }
+
+
 
     public void TransferMoney(TransferStrategy transferStrategy){
         this.transferStrategy = transferStrategy;
