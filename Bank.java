@@ -1,13 +1,15 @@
 import java.util.Vector;
 
 abstract public class Bank {
-    protected Vector<String> AccountNumbers;
-    protected Vector<String> MobileNumbers;
-    protected Vector<Double> Balance;
+    protected Vector<String> AccountNumbers = new Vector<>();
+    protected Vector<String> MobileNumbers = new Vector<>();
+    protected Vector<Double> Balance = new Vector<>();
+
+    BankCIP bankCIP = new BankCIP();
 
     public int verification(String accountNumber, String mobileNumber) {
-        for (int i = 0; i < AccountNumbers.size(); i++) {
-            if (AccountNumbers.get(i).equals(accountNumber) && MobileNumbers.get(i).equals(mobileNumber)) {
+        for (int i = 0; i < bankCIP.getAccountNumbers().size(); i++) {
+            if (bankCIP.getAccountNumbers().get(i).equals(accountNumber) && bankCIP.getMobileNumbers().get(i).equals(mobileNumber)) {
                 return i;
             }
         }

@@ -28,7 +28,7 @@ public class BankAPI{
         }
         option = 0;
     }
-    public<T extends Bank> void Checking(T bank, String accountNumber, String mobileNumber)
+    public void Checking(Bank bank, String accountNumber, String mobileNumber)
     {
         if (bank.verification(accountNumber, mobileNumber) != -1) {
             balance = bank.verification(accountNumber,mobileNumber);

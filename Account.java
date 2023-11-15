@@ -7,8 +7,6 @@ public class Account implements Observer {
     private int age;
     private TransferStrategy transferStrategy;
 
-
-
     public Account(){}
     public Account(String email,String password,String UserName,String name, int age , String MobileNumber){
         this.Email = email;
@@ -44,6 +42,9 @@ public class Account implements Observer {
 
     public String getEmail() {
         return Email;
+    }
+    public String getMobileNumber(){
+        return MobileNumber;
     }
 
     @Override

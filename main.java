@@ -7,7 +7,7 @@ public class main {
         TransferStrategy transferStrategy;
         Scanner scan = new Scanner(System.in);
         int option = 1;
-        while (option != 0) {
+        while (true) {
             System.out.println("1 - sign up");
             System.out.println("2 - sign in");
             System.out.println("0 - exit");
@@ -33,7 +33,6 @@ public class main {
                     password = scan.nextLine();
                     account = new Account(email, password, username, name, age, mobileNumber);
                     accountList.setAccount(account);
-                    break;
                 } else if (choice == 2) {
                     scan.nextLine();
                     System.out.println("Enter your email: ");
@@ -41,10 +40,8 @@ public class main {
                     System.out.println("Enter your password: ");
                     password = scan.nextLine();
                     account = accountList.getAccount(email, password);
-
                 } else {
                     System.out.println("Goodbye");
-                    break;
                 } 
                 System.out.println("choice account type: ");
                 System.out.println("1- bank account 2-mobile wallet");
@@ -81,7 +78,16 @@ public class main {
                                     account.Transfer(amount, accountType, accountType);
                                     break;
                                 case 2:
-                                    
+                                    accountType = new MobileWallet();
+                                    MobileWallet wallet = (MobileWallet) accountType;
+                                    wallet.getWalletProviderAPI().chooseProvider();
+                                    System.out.println("Enter mobile number: ");
+                                    String mobile = scan.nextLine();
+                                    System.out.println("Enter amount: ");
+                                    amount = scan.nextDouble();
+                                    transferStrategy = new WalletTransfer();
+                                    account.TransferMoney(transferStrategy);
+                                    account.Transfer(amount, accountType, accountType);
                                     break;
 
                                 default:
