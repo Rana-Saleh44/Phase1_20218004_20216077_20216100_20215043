@@ -10,18 +10,11 @@ public class AccountList {
     }
 
     public void setAccount(Account account) {
-        for (Account account1 : accountList) {
-            if (Objects.equals(account1.getEmail(), account.getEmail())) {
-                System.out.println("The email already exits please enter another one :");
-                return;
-            } else {
-                accountList.add(account);
-            }
-        }
+        accountList.add(account);
     }
     public Account getAccount(String email , String password){
         for (Account account1 : accountList) {
-            if (account1.getEmail() == email && account1.getPassword() == password) {
+            if (Objects.equals(account1.getEmail(), email) && Objects.equals(account1.getPassword(), password)) {
                 System.out.println("Welcome");
                 return account1;
             }

@@ -7,6 +7,8 @@ public class Account implements Observer {
     private int age;
     private TransferStrategy transferStrategy;
 
+
+
     public Account(){}
     public Account(String email,String password,String UserName,String name, int age , String MobileNumber){
         this.Email = email;
@@ -50,6 +52,9 @@ public class Account implements Observer {
     }
     public void TransferMoney(TransferStrategy transferStrategy){
         this.transferStrategy = transferStrategy;
+    }
+    public void Transfer(double amount,AccountType SoureAccount,AccountType TargetAccount){
+        transferStrategy.transfer(amount,SoureAccount,TargetAccount);
     }
 
 }

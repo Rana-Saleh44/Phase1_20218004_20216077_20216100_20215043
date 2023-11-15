@@ -1,10 +1,11 @@
 public class BankAccount extends AccountType{
-    private BankAPI bankAPI;
+    private BankAPI bankAPI = new BankAPI();
     private String AccountNumber;
 
-    public void LoginToMyAccount(Account useraccount, String accountnumber){
-        if(useraccount.equals(this.UserAccount)){
-            this.AccountNumber = accountnumber;
+    public void LoginToMyAccount(Account userAccount, String accountNumber){
+
+        if(userAccount.equals(this.UserAccount)){
+            this.AccountNumber = accountNumber;
         }
         else{
             System.out.println("Login Failed!");
