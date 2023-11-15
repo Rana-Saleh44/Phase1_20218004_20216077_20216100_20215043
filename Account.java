@@ -7,7 +7,19 @@ public class Account implements Observer {
     private int age;
 
     public Account(){}
-    public Account(String email,String password){
+    public Account(String email,String password,String UserName,String name, int age , String MobileNumber){
+        this.Email = email;
+        this.Password = password;
+        this.UserName = UserName;
+        this.Name= name;
+        this.MobileNumber = MobileNumber;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public Account(String email, String password){
         this.Email = email;
         this.Password = password;
     }
@@ -16,32 +28,19 @@ public class Account implements Observer {
         return Name;
     }
 
-    public void setName(String name) {
-        this.Name = name;
-    }
 
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public String getUsername() {
         return UserName;
     }
 
-    public void setUsername(String username) {
-        this.UserName = username;
-    }
 
     public String getEmail() {
         return Email;
-    }
-
-    public void setEmail(String email) {
-        this.Email = email;
     }
 
     @Override

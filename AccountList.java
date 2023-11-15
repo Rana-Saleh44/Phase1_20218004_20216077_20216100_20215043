@@ -9,8 +9,7 @@ public class AccountList {
         return accountList;
     }
 
-    public void setAccount(String email, String password) {
-        Account account = new Account(email, password);
+    public void setAccount(Account account) {
         for (Account account1 : accountList) {
             if (Objects.equals(account1.getEmail(), account.getEmail())) {
                 System.out.println("The email already exits please enter another one :");
@@ -19,6 +18,16 @@ public class AccountList {
                 accountList.add(account);
             }
         }
+    }
+    public Account getAccount(String email , String password){
+        for (Account account1 : accountList) {
+            if (account1.getEmail() == email && account1.getPassword() == password) {
+                System.out.println("Welcome");
+                return account1;
+            }
+        }
+        System.out.println("Wrong email or password please try again");
+        return null;
     }
 
 }

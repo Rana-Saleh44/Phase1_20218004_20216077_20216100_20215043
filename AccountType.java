@@ -1,4 +1,4 @@
-public class AccountType {
+abstract class AccountType {
 
     private TransferStrategy transferStrategy;
     protected Account UserAccount;
