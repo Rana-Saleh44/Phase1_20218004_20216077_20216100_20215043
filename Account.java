@@ -5,6 +5,7 @@ public class Account implements Observer {
     private String Email;
     private String Password;
     private int age;
+    private TransferStrategy transferStrategy;
 
     public Account(){}
     public Account(String email,String password,String UserName,String name, int age , String MobileNumber){
@@ -46,6 +47,9 @@ public class Account implements Observer {
     @Override
     public void update(String event) {
         System.out.println(event);
+    }
+    public void TransferMoney(TransferStrategy transferStrategy){
+        this.transferStrategy = transferStrategy;
     }
 
 }

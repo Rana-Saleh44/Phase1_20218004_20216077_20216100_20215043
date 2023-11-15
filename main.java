@@ -63,6 +63,7 @@ public class main {
                     break;
                 case 2:
                     accountType = new MobileWallet();
+                    MobileWallet mobileWallet = (MobileWallet) accountType;
 
                     break;
                 default:

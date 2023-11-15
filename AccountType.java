@@ -1,6 +1,4 @@
-abstract class AccountType {
-
-    private TransferStrategy transferStrategy;
+abstract public class AccountType {
     protected Account UserAccount;
     protected double Balance;
     private String AccountNumber;
@@ -28,12 +26,6 @@ abstract class AccountType {
 
     public void addAmount(double amount) {
         Balance += amount;
-    }
-
-
-
-    public void TransferMoney(TransferStrategy transferStrategy){
-        this.transferStrategy = transferStrategy;
     }
 }
 
