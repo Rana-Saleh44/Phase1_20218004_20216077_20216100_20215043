@@ -81,7 +81,11 @@ public class main {
                                     account.Transfer(amount, accountType, accountType);
                                     break;
                                 case 2:
-                                    
+                                    System.out.print("Enter Type of bill: ");
+                                    String type = scan.nextLine();
+                                    System.out.print("Enter amount: ");
+                                    double AMount = scan.nextDouble();
+                                   // Bill bill = new Bill(type, amount);
                                     break;
 
                                 default:
@@ -92,7 +96,40 @@ public class main {
                     case 2:
                         accountType = new MobileWallet();
                         MobileWallet mobileWallet = (MobileWallet) accountType;
+                        System.out.print("Enter your mobile number: ");
+                        String mobilenumber;
+                        mobilenumber = scan.nextLine();
+                        //mobileWallet.LoginToMyAccount(mobileWallet, accountNumber);
+                        do {
+                            System.out.println("1-TransferMoney\n2-PayBill\n0-exit");
+                            choice = scan.nextInt();
+                            scan.nextLine();
+                            switch (choice) {
+                                case 1:
+                                    accountType = new BankAccount();
+                                    BankAccount bank = (BankAccount) accountType;
+                                    System.out.println("Enter the account number: ");
+                                    String AccountNumber, MobileNumber;
+                                    double amount;
+                                    AccountNumber = scan.nextLine();
+                                    System.out.println("Enter mobile number: ");
+                                    MobileNumber = scan.nextLine();
+                                    System.out.println("Enter amount you want to transfer: ");
+                                    amount = scan.nextDouble();
+                                    scan.nextLine();
+                                    bank.getBankAPI().TransitionToBank(AccountNumber, MobileNumber);
+                                    transferStrategy = new BankTransfer();
+                                    account.TransferMoney(transferStrategy);
+                                    account.Transfer(amount, accountType, accountType);
+                                    break;
+                                case 2:
+                                    
+                                    break;
 
+                                default:
+                                    break;
+                            }
+                        } while (choice != 0);
                         break;
                     default:
                         System.out.println("wrong choice");
