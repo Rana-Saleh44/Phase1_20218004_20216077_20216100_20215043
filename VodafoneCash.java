@@ -1,6 +1,11 @@
-public class VodafoneCash extends MobileWallet{
-    private double balance;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Vector;
 
+public class VodafoneCash extends MobileWallet {
+    private double balance = 1000;
+    private Vector<String> Users =new Vector<>(Arrays.asList("+201128436224","+201211708075","+201112345678"));
     public double getBalance() {
         return balance;
     }

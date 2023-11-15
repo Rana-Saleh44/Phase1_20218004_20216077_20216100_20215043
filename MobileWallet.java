@@ -6,6 +6,11 @@ public class MobileWallet extends AccountType {
     private String mobileNumber;
     private boolean numberVerification;
     protected int OTPn;
+    private WalletProviderAPI walletProviderAPI = new WalletProviderAPI();
+
+    public WalletProviderAPI getWalletProviderAPI() {
+        return walletProviderAPI;
+    }
 
     public boolean verifyMobileNumber() {
         if (mobileNumber.startsWith("+20") && numberOfDigits(mobileNumber) == true) {

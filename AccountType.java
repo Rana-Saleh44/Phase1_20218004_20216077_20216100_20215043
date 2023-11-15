@@ -1,6 +1,6 @@
 abstract public class AccountType {
     protected Account UserAccount;
-    protected double Balance;
+    protected double Balance = 10000;
     private String AccountNumber;
 
 
