@@ -3,7 +3,7 @@ public class BankAccount extends AccountType{
     private String AccountNumber;
 
     public void LoginToMyAccount(Account userAccount, String accountNumber){
-
+        
         if(userAccount.equals(this.UserAccount)){
             this.AccountNumber = accountNumber;
         }

@@ -4,6 +4,9 @@ public class BankAPI{
     Scanner input = new Scanner(System.in);
     private BankFactory bankFactory = new ConcreteBankFactory();
     private Bank bank;
+    public Bank getBank(){
+        return bank;
+    }
     private int otpCounter = 0;
     private int option;
     private double balance;

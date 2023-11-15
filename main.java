@@ -6,7 +6,8 @@ public class main {
         AccountList accountList = new AccountList();
         TransferStrategy transferStrategy;
         Scanner scan = new Scanner(System.in);
-        while (true) {
+        int option = 1;
+        while (option != 0) {
             System.out.println("1 - sign up");
             System.out.println("2 - sign in");
             System.out.println("0 - exit");
@@ -41,10 +42,10 @@ public class main {
                     password = scan.nextLine();
                     account = accountList.getAccount(email, password);
 
-                } else if (choice == 0) {
+                } else {
                     System.out.println("Goodbye");
-                    return;
-                } else System.out.println("Wrong choice, please try again");
+                    break;
+                } 
                 System.out.println("choice account type: ");
                 System.out.println("1- bank account 2-mobile wallet");
                 choice = scan.nextInt();
@@ -80,7 +81,7 @@ public class main {
                                     account.Transfer(amount, accountType, accountType);
                                     break;
                                 case 2:
-
+                                    
                                     break;
 
                                 default:
@@ -98,6 +99,7 @@ public class main {
                         break;
                 }
             }
+        option = choice;
         }
     }
 }
